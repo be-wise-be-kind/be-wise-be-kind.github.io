@@ -140,6 +140,65 @@
             color: #666;
         }
 
+        .story-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .story-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            border: 2px solid transparent;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,102,204,0.2);
+            border-color: #0066cc;
+        }
+
+        .story-card h3 {
+            color: #0066cc;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .story-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .story-card.disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .story-card.disabled:hover {
+            transform: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-color: transparent;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0066cc;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -157,6 +216,10 @@
                 display: block;
                 margin: 10px 0;
             }
+
+            .story-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -166,7 +229,7 @@
             <h1>Steve Jackson</h1>
             <p class="tagline">Principal Software Engineer | AI-Assisted Development Pioneer | Technical Leader</p>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/steve-jackson-ai-dev/" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/steve-jackson-principal-engineer/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/be-wise-be-kind" target="_blank">GitHub</a>
                 <a href="mailto:steve.jackson@example.com">Contact</a>
             </div>
@@ -174,6 +237,33 @@
     </header>
 
     <div class="container">
+        <!-- Story Cards Section -->
+        <div class="story-cards">
+            <div class="story-card disabled">
+                <h3>USMC</h3>
+                <p>Military service and the foundation of discipline, leadership, and mission-first thinking</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+            <div class="story-card disabled">
+                <h3>Education</h3>
+                <p>From field operations to computer science degree at 40, learning never stops</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+            <div class="story-card disabled">
+                <h3>Control Systems</h3>
+                <p>Building systems that save lives and prevent disasters in oil & gas</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+            <div class="story-card disabled">
+                <h3>Software Engineering</h3>
+                <p>20+ years building everything from IoT to distributed systems with AI-first approach</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+        </div>
+
         <section class="about">
             <h2>About</h2>
             <p>
